@@ -1,0 +1,33 @@
+{
+  "name": "simplepos",
+  "version": "1.0.0",
+  "description": "Project 3 - React Based Simple POS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"npm run server\" \"cd client && npm start\"",
+    "server": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aellyl/simplePOS.git"
+  },
+  "author": "Aelly Liu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aellyl/simplePOS/issues"
+  },
+  "homepage": "https://github.com/aellyl/simplePOS#readme",
+  "dependencies": {
+    "bcrypt-node": "^0.1.0",
+    "body-parser": "^1.18.1",
+    "concurrently": "^3.5.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "mysql2": "^1.4.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^4.8.4"
+  }
+}
