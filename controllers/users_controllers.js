@@ -3,10 +3,10 @@ var db = require('../models');
 
 module.exports = function(app, passport) {
 
-        app.get("/user", function(req,res){
+        app.get("/user/:username", function(req,res){
             db.user.findOne({
                 where: {
-                    username: req.body.username
+                    username: req.params.username
                                 }
             }).then(function (user){
                 if(user)

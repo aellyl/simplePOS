@@ -14,6 +14,14 @@ function loginSuccess(data) {
 	}
 }
 
+function setLastLogin(last_login)
+{
+	return{
+		type:types.SET_LAST_LOGIN,
+		last_login
+	}
+}
+
 function loginError() {
 	return { type: types.LOGIN_ERROR_USER }
 }
@@ -53,6 +61,25 @@ function makeUserRequest(method, data, api="/login") {
 	})
 }
 
+export function getLastLogin(userName){
+			console.log("in get lastlogin user action");
+		return dispatch=>{axios.get("/user/"+userName)
+				.then(response=>{
+						if(response.data.success){
+							console.log("getLastLogin: ", response.data);
+							dispatch(setLastLogin(response.data.last_login));
+						}
+
+				})
+				.catch(response =>{
+					if (response instanceof Error) {
+					  // Something happened in setting up the request that triggered an Error
+					  console.log('Error', response.message);
+					}
+				})	
+		}
+}
+
 // Example of an Async Action Creator
 // http://redux.js.org/docs/advanced/AsyncActions.html
 export function manualLogin(
@@ -77,7 +104,7 @@ export function manualLogin(
 					return loginMessage					
 				}
 			})
-			.catch(function (response) {
+			.catch(response => {
 			    if (response instanceof Error) {
 			      // Something happened in setting up the request that triggered an Error
 			      console.log('Error', response.message);

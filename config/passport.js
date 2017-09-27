@@ -73,7 +73,7 @@ module.exports = function (passport) {
                     db.user.update({last_login: Date.now()},{
                         where:{ username:username }
                     }).then(function(result){
-                        console.log("update last login: ", result);
+                        console.log("in passport login, update last login: ", result);
                     });
 
                     return done(null,user);

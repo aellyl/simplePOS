@@ -1,6 +1,3 @@
-
-
-
 import React from "react"
 import ReactDOM from 'react-dom';
 import { Provider } from "react-redux"
@@ -14,6 +11,7 @@ import createRoutes from "./routes"
 import rootReducer from "./reducers"
 import './index.css';
 
+
 import registerServiceWorker from './registerServiceWorker';
 let middleware = [		
 	thunkMiddleware
@@ -25,6 +23,7 @@ let middleware = [
 // }
 
 const finalCreateStore = applyMiddleware(...middleware)(createStore)
+// const store = finalCreateStore(rootReducer,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())	
 const store = finalCreateStore(rootReducer)	
 
 // Create an enhanced history that syncs navigation events with the store
@@ -36,5 +35,6 @@ ReactDOM.render(
 		{routes}
 	</Provider>
 	, document.getElementById("root"));
+	
 registerServiceWorker();
 

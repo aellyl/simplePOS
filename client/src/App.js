@@ -1,33 +1,35 @@
-import React from "react"
-import { render } from "react-dom"
-import { Provider } from "react-redux"
-import { Router, browserHistory } from "react-router"
-import { syncHistoryWithStore } from "react-router-redux"
-import { applyMiddleware, createStore } from "redux"
-import thunkMiddleware from "redux-thunk"
-// import createLogger from "redux-logger"
-import { syncHistory } from "react-router-redux"
-import createRoutes from "./routes"
-import rootReducer from "./reducers"
+// //doesn't need this file
 
-let middleware = [		
-	thunkMiddleware
-]	
+// import React from "react"
+// import { render } from "react-dom"
+// import { Provider } from "react-redux"
+// import { Router, browserHistory } from "react-router"
+// import { syncHistoryWithStore } from "react-router-redux"
+// import { applyMiddleware, createStore } from "redux"
+// import thunkMiddleware from "redux-thunk"
+// // import createLogger from "redux-logger"
+// import { syncHistory } from "react-router-redux"
+// import createRoutes from "./routes"
+// import rootReducer from "./reducers"
 
-// only add Redux-Logger on the client-side because it causes problems server-side.
-// if (!isNode) {
-// 	middleware.push(createLogger())
-// }
+// let middleware = [		
+// 	thunkMiddleware
+// ]	
 
-const finalCreateStore = applyMiddleware(...middleware)(createStore)
-const store = finalCreateStore(rootReducer)	
+// // only add Redux-Logger on the client-side because it causes problems server-side.
+// // if (!isNode) {
+// // 	middleware.push(createLogger())
+// // }
 
-// Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store)
-const routes = createRoutes(store, history)
+// const finalCreateStore = applyMiddleware(...middleware)(createStore)
+// const store = finalCreateStore(rootReducer);	
 
-render(
-	<Provider store={store}>
-		{routes}
-	</Provider>
-	, document.getElementById("app"));
+// // Create an enhanced history that syncs navigation events with the store
+// const history = syncHistoryWithStore(browserHistory, store)
+// const routes = createRoutes(store, history)
+
+// render(
+// 	<Provider store={store}>
+// 		{routes}
+// 	</Provider>
+// 	, document.getElementById("app"));

@@ -10,14 +10,16 @@ import {
 	LOGOUT_ERROR_USER,
 	REGISTER_USER,
 	REGISTER_SUCCESS_USER,
-	REGISTER_ERROR_USER	
+	REGISTER_ERROR_USER,
+	SET_LAST_LOGIN	
 } from "../constants"
 
 const user = (state = {
 	isWaiting: false,
 	authenticated: false,
 	username: "",
-	fname:""
+	fname:"",
+	last_login:""
 }, action) => {
 	switch(action.type) {
 		case MANUAL_LOGIN_USER:
@@ -44,6 +46,8 @@ const user = (state = {
 			return Object.assign({}, state, { isWaiting: false })
 		case REGISTER_ERROR_USER:
 			return Object.assign({}, state, { isWaiting: false })
+		case SET_LAST_LOGIN:
+			return {...state, last_login: action.last_login}
 		default:
 			return state
 	}

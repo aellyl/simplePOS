@@ -19,7 +19,8 @@ class Login extends Component {
 	
         const password = ReactDOM.findDOMNode(this.refs.password).value
         const username= ReactDOM.findDOMNode(this.refs.username).value
-		
+        
+        //console.log("on LoginSubmit, nextPath: ", this.props.nextPathname);
 		// Passed in via react-redux. Returns a promise.
 		this.props.manualLogin({
             username,
@@ -51,10 +52,10 @@ class Login extends Component {
                 <label className="mdl-textfield__label" for="username">Username</label>
             </div> 
             <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input className="mdl-textfield__input" type="text" id="password" ref="password"/>
+                <input className="mdl-textfield__input" type="password" id="password" ref="password"/>
                 <label className="mdl-textfield__label" for="password">password</label>
             </div>   
-            <button className="loginBtn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--accent" type="submit">
+            <button className="loginBtn mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised" type="submit">
                            GO <i className="material-icons">directions_run</i>
             </button>
 

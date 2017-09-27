@@ -1,3 +1,4 @@
+//for user action
 export const MANUAL_LOGIN_USER = "MANUAL_LOGIN_USER"
 export const LOGIN_SUCCESS_USER = "LOGIN_SUCCESS_USER"
 export const LOGIN_ERROR_USER = "LOGIN_ERROR_USER"
@@ -10,3 +11,10 @@ export const LOGOUT_ERROR_USER = "LOGOUT_ERROR_USER"
 export const REGISTER_USER = "REGISTER_USER"
 export const REGISTER_SUCCESS_USER = "REGISTER_SUCCESS_USER"
 export const REGISTER_ERROR_USER = "REGISTER_ERROR_USER"
+export const SET_LAST_LOGIN = "SET_LAST_LOGIN"
+
+
+//For modal action
+export const SHOW_MODAL = "SHOW_MODAL"
+export const HIDE_MODAL = "HIDE_MODAL"
+export const SET_MEMBER = "SET_MEMBER"
